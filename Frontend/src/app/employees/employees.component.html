@@ -1,0 +1,40 @@
+<div class='card'>
+    <div class='card-header'>
+     <h1><b>{{pageTitle}}</b></h1>
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf = 'employees && employees.length'>
+          <thead>
+            <tr>
+              
+
+              <th>Name</th>
+              <th>Email</th>
+              <th>Qualification</th>
+              
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let employee of employees'>
+                  
+                  <td>{{ employee.name }}</td>
+                  <td>{{ employee.email }}</td>
+                  <td>{{employee.qualification}}</td>
+                  
+                
+                  <td>
+                      <button class="btn btn-primary" style="cursor:pointer" (click)="newEmployee(employee)" > Add</button>                    
+                    <button class="btn btn-warning" style="cursor:pointer"   (click)="editEmployee(employee)" style="margin-left: 10px;"> Edit</button>
+                    <button class="btn btn-secondary" style="cursor:pointer" (click)="deleteEmployee(employee)"style="margin-left: 10px;"> Delete</button>
+                  </td>
+                </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
